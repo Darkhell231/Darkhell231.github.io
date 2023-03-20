@@ -1,0 +1,56 @@
+/* This is the CSS code for your SCP article header */
+
+/* Basic settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #000000;
+  text-align: center;
+}
+
+h2 {
+  color: #000000;
+  text-align: left;
+}
+
+p {
+  color: #000000;
+  text-align: justify;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Main container */
+.container {
+  max-width: 800px; /* You can change this value to adjust the width of your article */
+  margin: auto; /* This centers your article on the page */
+}
+
+/* Header */
+.header {
+    position :fixed ; 
+top :0 ; 
+left :0 ; 
+right :0 ; 
+height :100px ; 
+background-color :#800000 ; 
+z-index :10 ;
+}
+.header img {width :100px ; height :auto ; float :left ; margin-left :20px ;
+}
+.header h1 {line-height :100px ; font-size :36px ; font-weight :bold ; color
+:white ;
+}
