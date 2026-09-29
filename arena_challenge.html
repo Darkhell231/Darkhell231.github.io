@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пиксельная арена</title>
+<style>
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#141731}
+#arena{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;background-color:#1b1f3a;background-image:linear-gradient(45deg,#20254a 25%,transparent 25%,transparent 75%,#20254a 75%),linear-gradient(45deg,#20254a 25%,transparent 25%,transparent 75%,#20254a 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+#arena div{position:absolute;box-sizing:border-box}
+.f{background:#4a5270;box-shadow:inset 4px 4px 0 #6b7596,inset -4px -4px 0 #2f3550}
+.a{background:#2ec4b6;box-shadow:inset 4px 4px 0 #9ff7ee,inset -4px -4px 0 #1a7f76}
+.b{background:#ff7043;box-shadow:inset 4px 4px 0 #ffb08f,inset -4px -4px 0 #b23e17}
+.m{background:#f2d675;box-shadow:inset 4px 4px 0 #fff3bf,inset -4px -4px 0 #b08d1e}
+.c{background:linear-gradient(45deg,transparent 43%,#6b4426 43%,#6b4426 57%,transparent 57%),linear-gradient(-45deg,transparent 43%,#6b4426 43%,#6b4426 57%,transparent 57%),#a9744f;box-shadow:inset 8px 8px 0 #d09a6e,inset -8px -8px 0 #6b4426}
+.d{background:linear-gradient(transparent 40%,#3a0808 40%,#3a0808 60%,transparent 60%),#d63a3a;box-shadow:inset 8px 8px 0 #ff8a7a,inset -8px -8px 0 #8c1c1c}
+[class^="t"]{box-shadow:inset 4px 4px 0 rgba(255,255,255,.35),inset -4px -4px 0 rgba(0,0,0,.28)}
+.ty{background:#ffd23f}.tk{background:#231c33}.tw{background:#f3f3f3}.tr{background:#e0322f}.tg{background:#4cd964}.tp{background:#ff7eb6}.tb{background:#7a4a25}.to{background:#ff9f1c}.tu{background:#4aa8ff}
+#arena.th1{background-color:#2a1233;background-image:linear-gradient(45deg,#341843 25%,transparent 25%,transparent 75%,#341843 75%),linear-gradient(45deg,#341843 25%,transparent 25%,transparent 75%,#341843 75%)}#arena.th1 .a{background:#ff5fa2;box-shadow:inset 4px 4px 0 #ffb3d3,inset -4px -4px 0 #a62a63}#arena.th1 .b{background:#ffd23f;box-shadow:inset 4px 4px 0 #fff0a0,inset -4px -4px 0 #a8820a}
+#arena.th2{background-color:#10261a;background-image:linear-gradient(45deg,#163322 25%,transparent 25%,transparent 75%,#163322 75%),linear-gradient(45deg,#163322 25%,transparent 25%,transparent 75%,#163322 75%)}#arena.th2 .a{background:#7bd94c;box-shadow:inset 4px 4px 0 #c5f5a3,inset -4px -4px 0 #3f8a1f}#arena.th2 .b{background:#e08a3c;box-shadow:inset 4px 4px 0 #ffc48a,inset -4px -4px 0 #8f4d14}
+#arena.th3{background-color:#0e2440;background-image:linear-gradient(45deg,#143056 25%,transparent 25%,transparent 75%,#143056 75%),linear-gradient(45deg,#143056 25%,transparent 25%,transparent 75%,#143056 75%)}#arena.th3 .a{background:#9be7ff;box-shadow:inset 4px 4px 0 #e0f8ff,inset -4px -4px 0 #4a9fc0}#arena.th3 .b{background:#c9b6ff;box-shadow:inset 4px 4px 0 #efe6ff,inset -4px -4px 0 #7259b8}
+#arena.th4{background-color:#2a0d0d;background-image:linear-gradient(45deg,#381414 25%,transparent 25%,transparent 75%,#381414 75%),linear-gradient(45deg,#381414 25%,transparent 25%,transparent 75%,#381414 75%)}#arena.th4 .a{background:#ff9f1c;box-shadow:inset 4px 4px 0 #ffd08a,inset -4px -4px 0 #a85f00}#arena.th4 .b{background:#e0322f;box-shadow:inset 4px 4px 0 #ff8f8c,inset -4px -4px 0 #8c1512}
+#hint{position:absolute;left:0;right:0;top:5%;text-align:center;font-family:"Courier New",monospace;font-weight:700;font-size:clamp(11px,1.05vw,20px);line-height:1.35;color:#f3f3f3;text-shadow:2px 2px 0 #000}
+#hint p{margin:0}#hint .k{color:#ffd23f}
+#hint .t{color:#9ff7ee}
+</style>
+<style id="tilecss">#arena div{width:2.083%;height:3.704%}.c,.d{width:4.166%!important;height:7.408%!important}</style></head>
+<body><div id="arena"><div class="tp" style="left:39.583%;top:33.333%"></div><div class="tp" style="left:41.667%;top:33.333%"></div><div class="tp" style="left:43.75%;top:33.333%"></div><div class="tp" style="left:52.083%;top:33.333%"></div><div class="tp" style="left:54.167%;top:33.333%"></div><div class="tp" style="left:56.25%;top:33.333%"></div><div class="tp" style="left:37.5%;top:37.037%"></div><div class="tp" style="left:39.583%;top:37.037%"></div><div class="tp" style="left:41.667%;top:37.037%"></div><div class="tp" style="left:43.75%;top:37.037%"></div><div class="tp" style="left:45.833%;top:37.037%"></div><div class="tp" style="left:50%;top:37.037%"></div><div class="tp" style="left:52.083%;top:37.037%"></div><div class="tp" style="left:54.167%;top:37.037%"></div><div class="tp" style="left:56.25%;top:37.037%"></div><div class="tp" style="left:58.333%;top:37.037%"></div><div class="tp" style="left:37.5%;top:40.741%"></div><div class="tp" style="left:39.583%;top:40.741%"></div><div class="tp" style="left:41.667%;top:40.741%"></div><div class="tp" style="left:43.75%;top:40.741%"></div><div class="tp" style="left:45.833%;top:40.741%"></div><div class="tp" style="left:47.917%;top:40.741%"></div><div class="tp" style="left:50%;top:40.741%"></div><div class="tp" style="left:52.083%;top:40.741%"></div><div class="tp" style="left:54.167%;top:40.741%"></div><div class="tp" style="left:56.25%;top:40.741%"></div><div class="tp" style="left:58.333%;top:40.741%"></div><div class="tp" style="left:37.5%;top:44.444%"></div><div class="tp" style="left:39.583%;top:44.444%"></div><div class="tp" style="left:41.667%;top:44.444%"></div><div class="tp" style="left:43.75%;top:44.444%"></div><div class="tp" style="left:45.833%;top:44.444%"></div><div class="tp" style="left:47.917%;top:44.444%"></div><div class="tp" style="left:50%;top:44.444%"></div><div class="tp" style="left:52.083%;top:44.444%"></div><div class="tp" style="left:54.167%;top:44.444%"></div><div class="tp" style="left:56.25%;top:44.444%"></div><div class="tp" style="left:58.333%;top:44.444%"></div><div class="tp" style="left:39.583%;top:48.148%"></div><div class="tp" style="left:41.667%;top:48.148%"></div><div class="tp" style="left:43.75%;top:48.148%"></div><div class="tp" style="left:45.833%;top:48.148%"></div><div class="tp" style="left:47.917%;top:48.148%"></div><div class="tp" style="left:50%;top:48.148%"></div><div class="tp" style="left:52.083%;top:48.148%"></div><div class="tp" style="left:54.167%;top:48.148%"></div><div class="tp" style="left:56.25%;top:48.148%"></div><div class="tp" style="left:41.667%;top:51.852%"></div><div class="tp" style="left:43.75%;top:51.852%"></div><div class="tp" style="left:45.833%;top:51.852%"></div><div class="tp" style="left:47.917%;top:51.852%"></div><div class="tp" style="left:50%;top:51.852%"></div><div class="tp" style="left:52.083%;top:51.852%"></div><div class="tp" style="left:54.167%;top:51.852%"></div><div class="tp" style="left:43.75%;top:55.556%"></div><div class="tp" style="left:45.833%;top:55.556%"></div><div class="tp" style="left:47.917%;top:55.556%"></div><div class="tp" style="left:50%;top:55.556%"></div><div class="tp" style="left:52.083%;top:55.556%"></div><div class="tp" style="left:45.833%;top:59.259%"></div><div class="tp" style="left:47.917%;top:59.259%"></div><div class="tp" style="left:50%;top:59.259%"></div><div class="tp" style="left:47.917%;top:62.963%"></div><div class="f" style="left:0%;top:0%"></div><div class="f" style="left:2.083%;top:0%"></div><div class="f" style="left:4.167%;top:0%"></div><div class="f" style="left:6.25%;top:0%"></div><div class="f" style="left:8.333%;top:0%"></div><div class="f" style="left:10.417%;top:0%"></div><div class="f" style="left:12.5%;top:0%"></div><div class="f" style="left:14.583%;top:0%"></div><div class="f" style="left:16.667%;top:0%"></div><div class="f" style="left:18.75%;top:0%"></div><div class="f" style="left:20.833%;top:0%"></div><div class="f" style="left:22.917%;top:0%"></div><div class="f" style="left:25%;top:0%"></div><div class="f" style="left:27.083%;top:0%"></div><div class="f" style="left:29.167%;top:0%"></div><div class="f" style="left:31.25%;top:0%"></div><div class="f" style="left:33.333%;top:0%"></div><div class="f" style="left:35.417%;top:0%"></div><div class="f" style="left:37.5%;top:0%"></div><div class="f" style="left:39.583%;top:0%"></div><div class="f" style="left:41.667%;top:0%"></div><div class="f" style="left:43.75%;top:0%"></div><div class="f" style="left:45.833%;top:0%"></div><div class="f" style="left:47.917%;top:0%"></div><div class="f" style="left:50%;top:0%"></div><div class="f" style="left:52.083%;top:0%"></div><div class="f" style="left:54.167%;top:0%"></div><div class="f" style="left:56.25%;top:0%"></div><div class="f" style="left:58.333%;top:0%"></div><div class="f" style="left:60.417%;top:0%"></div><div class="f" style="left:62.5%;top:0%"></div><div class="f" style="left:64.583%;top:0%"></div><div class="f" style="left:66.667%;top:0%"></div><div class="f" style="left:68.75%;top:0%"></div><div class="f" style="left:70.833%;top:0%"></div><div class="f" style="left:72.917%;top:0%"></div><div class="f" style="left:75%;top:0%"></div><div class="f" style="left:77.083%;top:0%"></div><div class="f" style="left:79.167%;top:0%"></div><div class="f" style="left:81.25%;top:0%"></div><div class="f" style="left:83.333%;top:0%"></div><div class="f" style="left:85.417%;top:0%"></div><div class="f" style="left:87.5%;top:0%"></div><div class="f" style="left:89.583%;top:0%"></div><div class="f" style="left:91.667%;top:0%"></div><div class="f" style="left:93.75%;top:0%"></div><div class="f" style="left:95.833%;top:0%"></div><div class="f" style="left:97.917%;top:0%"></div><div class="f" style="left:0%;top:96.296%"></div><div class="f" style="left:2.083%;top:96.296%"></div><div class="f" style="left:4.167%;top:96.296%"></div><div class="f" style="left:6.25%;top:96.296%"></div><div class="f" style="left:8.333%;top:96.296%"></div><div class="f" style="left:10.417%;top:96.296%"></div><div class="f" style="left:12.5%;top:96.296%"></div><div class="f" style="left:14.583%;top:96.296%"></div><div class="f" style="left:16.667%;top:96.296%"></div><div class="f" style="left:18.75%;top:96.296%"></div><div class="f" style="left:20.833%;top:96.296%"></div><div class="f" style="left:22.917%;top:96.296%"></div><div class="f" style="left:25%;top:96.296%"></div><div class="f" style="left:27.083%;top:96.296%"></div><div class="f" style="left:29.167%;top:96.296%"></div><div class="f" style="left:31.25%;top:96.296%"></div><div class="f" style="left:33.333%;top:96.296%"></div><div class="f" style="left:35.417%;top:96.296%"></div><div class="f" style="left:37.5%;top:96.296%"></div><div class="f" style="left:39.583%;top:96.296%"></div><div class="f" style="left:41.667%;top:96.296%"></div><div class="f" style="left:43.75%;top:96.296%"></div><div class="f" style="left:45.833%;top:96.296%"></div><div class="f" style="left:47.917%;top:96.296%"></div><div class="f" style="left:50%;top:96.296%"></div><div class="f" style="left:52.083%;top:96.296%"></div><div class="f" style="left:54.167%;top:96.296%"></div><div class="f" style="left:56.25%;top:96.296%"></div><div class="f" style="left:58.333%;top:96.296%"></div><div class="f" style="left:60.417%;top:96.296%"></div><div class="f" style="left:62.5%;top:96.296%"></div><div class="f" style="left:64.583%;top:96.296%"></div><div class="f" style="left:66.667%;top:96.296%"></div><div class="f" style="left:68.75%;top:96.296%"></div><div class="f" style="left:70.833%;top:96.296%"></div><div class="f" style="left:72.917%;top:96.296%"></div><div class="f" style="left:75%;top:96.296%"></div><div class="f" style="left:77.083%;top:96.296%"></div><div class="f" style="left:79.167%;top:96.296%"></div><div class="f" style="left:81.25%;top:96.296%"></div><div class="f" style="left:83.333%;top:96.296%"></div><div class="f" style="left:85.417%;top:96.296%"></div><div class="f" style="left:87.5%;top:96.296%"></div><div class="f" style="left:89.583%;top:96.296%"></div><div class="f" style="left:91.667%;top:96.296%"></div><div class="f" style="left:93.75%;top:96.296%"></div><div class="f" style="left:95.833%;top:96.296%"></div><div class="f" style="left:97.917%;top:96.296%"></div><div class="f" style="left:0%;top:3.704%"></div><div class="f" style="left:97.917%;top:3.704%"></div><div class="f" style="left:0%;top:7.407%"></div><div class="f" style="left:97.917%;top:7.407%"></div><div class="f" style="left:0%;top:11.111%"></div><div class="f" style="left:97.917%;top:11.111%"></div><div class="f" style="left:0%;top:14.815%"></div><div class="f" style="left:97.917%;top:14.815%"></div><div class="f" style="left:0%;top:18.519%"></div><div class="f" style="left:97.917%;top:18.519%"></div><div class="f" style="left:0%;top:22.222%"></div><div class="f" style="left:97.917%;top:22.222%"></div><div class="f" style="left:0%;top:25.926%"></div><div class="f" style="left:97.917%;top:25.926%"></div><div class="f" style="left:0%;top:29.63%"></div><div class="f" style="left:97.917%;top:29.63%"></div><div class="f" style="left:0%;top:33.333%"></div><div class="f" style="left:97.917%;top:33.333%"></div><div class="f" style="left:0%;top:37.037%"></div><div class="f" style="left:97.917%;top:37.037%"></div><div class="f" style="left:0%;top:40.741%"></div><div class="f" style="left:97.917%;top:40.741%"></div><div class="f" style="left:0%;top:44.444%"></div><div class="f" style="left:97.917%;top:44.444%"></div><div class="f" style="left:0%;top:48.148%"></div><div class="f" style="left:97.917%;top:48.148%"></div><div class="f" style="left:0%;top:51.852%"></div><div class="f" style="left:97.917%;top:51.852%"></div><div class="f" style="left:0%;top:55.556%"></div><div class="f" style="left:97.917%;top:55.556%"></div><div class="f" style="left:0%;top:59.259%"></div><div class="f" style="left:97.917%;top:59.259%"></div><div class="f" style="left:0%;top:62.963%"></div><div class="f" style="left:97.917%;top:62.963%"></div><div class="f" style="left:0%;top:66.667%"></div><div class="f" style="left:97.917%;top:66.667%"></div><div class="f" style="left:0%;top:70.37%"></div><div class="f" style="left:97.917%;top:70.37%"></div><div class="f" style="left:0%;top:74.074%"></div><div class="f" style="left:97.917%;top:74.074%"></div><div class="f" style="left:0%;top:77.778%"></div><div class="f" style="left:97.917%;top:77.778%"></div><div class="f" style="left:0%;top:81.481%"></div><div class="f" style="left:97.917%;top:81.481%"></div><div class="f" style="left:0%;top:85.185%"></div><div class="f" style="left:97.917%;top:85.185%"></div><div class="f" style="left:0%;top:88.889%"></div><div class="f" style="left:97.917%;top:88.889%"></div><div class="f" style="left:0%;top:92.593%"></div><div class="f" style="left:97.917%;top:92.593%"></div><div class="a" style="left:6.25%;top:92.593%"></div><div class="a" style="left:8.333%;top:92.593%"></div><div class="a" style="left:10.417%;top:92.593%"></div><div class="a" style="left:12.5%;top:92.593%"></div><div class="a" style="left:14.583%;top:92.593%"></div><div class="a" style="left:16.667%;top:92.593%"></div><div class="a" style="left:18.75%;top:92.593%"></div><div class="a" style="left:20.833%;top:92.593%"></div><div class="b" style="left:77.083%;top:92.593%"></div><div class="b" style="left:79.167%;top:92.593%"></div><div class="b" style="left:81.25%;top:92.593%"></div><div class="b" style="left:83.333%;top:92.593%"></div><div class="b" style="left:85.417%;top:92.593%"></div><div class="b" style="left:87.5%;top:92.593%"></div><div class="b" style="left:89.583%;top:92.593%"></div><div class="b" style="left:91.667%;top:92.593%"></div><div class="a" style="left:6.25%;top:74.074%"></div><div class="a" style="left:8.333%;top:74.074%"></div><div class="a" style="left:10.417%;top:74.074%"></div><div class="a" style="left:12.5%;top:74.074%"></div><div class="a" style="left:14.583%;top:74.074%"></div><div class="a" style="left:16.667%;top:74.074%"></div><div class="a" style="left:18.75%;top:74.074%"></div><div class="a" style="left:20.833%;top:74.074%"></div><div class="a" style="left:22.917%;top:74.074%"></div><div class="a" style="left:25%;top:74.074%"></div><div class="a" style="left:27.083%;top:74.074%"></div><div class="a" style="left:29.167%;top:74.074%"></div><div class="a" style="left:31.25%;top:74.074%"></div><div class="a" style="left:33.333%;top:74.074%"></div><div class="b" style="left:64.583%;top:74.074%"></div><div class="b" style="left:66.667%;top:74.074%"></div><div class="b" style="left:68.75%;top:74.074%"></div><div class="b" style="left:70.833%;top:74.074%"></div><div class="b" style="left:72.917%;top:74.074%"></div><div class="b" style="left:75%;top:74.074%"></div><div class="b" style="left:77.083%;top:74.074%"></div><div class="b" style="left:79.167%;top:74.074%"></div><div class="b" style="left:81.25%;top:74.074%"></div><div class="b" style="left:83.333%;top:74.074%"></div><div class="b" style="left:85.417%;top:74.074%"></div><div class="b" style="left:87.5%;top:74.074%"></div><div class="b" style="left:89.583%;top:74.074%"></div><div class="b" style="left:91.667%;top:74.074%"></div><div class="c" style="left:27.083%;top:66.667%"></div><div class="c" style="left:68.75%;top:66.667%"></div><div class="a" style="left:10.417%;top:59.259%"></div><div class="a" style="left:12.5%;top:59.259%"></div><div class="a" style="left:14.583%;top:59.259%"></div><div class="a" style="left:16.667%;top:59.259%"></div><div class="a" style="left:18.75%;top:59.259%"></div><div class="a" style="left:20.833%;top:59.259%"></div><div class="a" style="left:22.917%;top:59.259%"></div><div class="a" style="left:25%;top:59.259%"></div><div class="a" style="left:27.083%;top:59.259%"></div><div class="a" style="left:29.167%;top:59.259%"></div><div class="a" style="left:31.25%;top:59.259%"></div><div class="a" style="left:33.333%;top:59.259%"></div><div class="a" style="left:35.417%;top:59.259%"></div><div class="a" style="left:37.5%;top:59.259%"></div><div class="b" style="left:60.417%;top:59.259%"></div><div class="b" style="left:62.5%;top:59.259%"></div><div class="b" style="left:64.583%;top:59.259%"></div><div class="b" style="left:66.667%;top:59.259%"></div><div class="b" style="left:68.75%;top:59.259%"></div><div class="b" style="left:70.833%;top:59.259%"></div><div class="b" style="left:72.917%;top:59.259%"></div><div class="b" style="left:75%;top:59.259%"></div><div class="b" style="left:77.083%;top:59.259%"></div><div class="b" style="left:79.167%;top:59.259%"></div><div class="b" style="left:81.25%;top:59.259%"></div><div class="b" style="left:83.333%;top:59.259%"></div><div class="b" style="left:85.417%;top:59.259%"></div><div class="b" style="left:87.5%;top:59.259%"></div><div class="a" style="left:10.417%;top:40.741%"></div><div class="a" style="left:12.5%;top:40.741%"></div><div class="a" style="left:14.583%;top:40.741%"></div><div class="a" style="left:16.667%;top:40.741%"></div><div class="a" style="left:18.75%;top:40.741%"></div><div class="a" style="left:20.833%;top:40.741%"></div><div class="b" style="left:77.083%;top:40.741%"></div><div class="b" style="left:79.167%;top:40.741%"></div><div class="b" style="left:81.25%;top:40.741%"></div><div class="b" style="left:83.333%;top:40.741%"></div><div class="b" style="left:85.417%;top:40.741%"></div><div class="b" style="left:87.5%;top:40.741%"></div><div class="c" style="left:16.667%;top:33.333%"></div><div class="c" style="left:79.167%;top:33.333%"></div><div class="a" style="left:31.25%;top:40.741%"></div><div class="a" style="left:33.333%;top:40.741%"></div><div class="a" style="left:35.417%;top:40.741%"></div><div class="b" style="left:60.417%;top:40.741%"></div><div class="b" style="left:62.5%;top:40.741%"></div><div class="b" style="left:64.583%;top:40.741%"></div><div class="b" style="left:66.667%;top:40.741%"></div><div class="d" style="left:60.417%;top:33.333%"></div><div class="m" style="left:31.25%;top:81.481%"></div><div class="m" style="left:33.333%;top:81.481%"></div><div class="m" style="left:35.417%;top:81.481%"></div><div class="m" style="left:37.5%;top:81.481%"></div><div class="m" style="left:39.583%;top:81.481%"></div><div class="m" style="left:58.333%;top:62.963%"></div><div class="m" style="left:60.417%;top:62.963%"></div><div class="m" style="left:62.5%;top:62.963%"></div><div class="m" style="left:64.583%;top:62.963%"></div><div class="m" style="left:66.667%;top:62.963%"></div><div class="m" style="left:31.25%;top:44.444%"></div><div class="m" style="left:33.333%;top:44.444%"></div><div class="m" style="left:35.417%;top:44.444%"></div><div class="m" style="left:39.583%;top:18.519%"></div><div class="m" style="left:41.667%;top:18.519%"></div><div class="m" style="left:43.75%;top:18.519%"></div><div class="m" style="left:45.833%;top:18.519%"></div><div class="m" style="left:47.917%;top:18.519%"></div><div class="m" style="left:50%;top:18.519%"></div><div class="m" style="left:52.083%;top:18.519%"></div><div class="m" style="left:54.167%;top:18.519%"></div><div class="m" style="left:56.25%;top:18.519%"></div><div class="m" style="left:58.333%;top:18.519%"></div><div class="c" style="left:29.167%;top:88.889%"></div><div class="c" style="left:66.667%;top:88.889%"></div></div>
+<div id="hint"><p class="t">Правила арены</p><p><span class="k">Только Pistol</span> - остальное оружие и гранаты запрещены</p><p><span class="k">Джетпак запрещён</span> - Space только для прыжка</p><p><span class="k">Босс в центре</span> - первым разрушь: сердце</p></div>
+<script>
+function p(v) { return Math.round(v * 1000) / 1000; }
+function tileCss(GW, GH) {
+  var w = p(100 / GW), h = p(100 / GH);
+  return "#arena div{width:" + w + "%;height:" + h + "%}.c,.d{width:" + p(w * 2) + "%!important;height:" + p(h * 2) + "%!important}";
+}
+var SPR = [
+ ["...yyyyyy...",".yyyyyyyyyy.","yyykyyyykyyy","yyykyyyykyyy","yyyyyyyyyyyy","ykyyyyyyyyky","yykyyyyyykyy",".yykkkkkkyy.",".yyyyyyyyyy.","...yyyyyy..."],
+ ["..g.....g..","...g...g...","..ggggggg..",".gg.ggg.gg.","ggggggggggg","g.ggggggg.g","g.g.....g.g","...gg.gg..."],
+ [".ppp...ppp.","ppppp.ppppp","ppppppppppp","ppppppppppp",".ppppppppp.","..ppppppp..","...ppppp...","....ppp....",".....p....."],
+ ["....yyyy...","...yyyyyy..","...ykyyyyoo","...yyyyyy..","....yyyy...","y..yyyyyyy.","yyyyyyyyyyy",".yyyyyyyyy.","..yyyyyyy.."],
+ ["..bbb...bbb..",".bbbbb.bbbbb.","bbbbbbbbbbbbb","bbb.bbbbb.bbb","b....bbb....b"],
+ [".wwwwwwwww.","wwwwwwwwwww","wkkkwwwkkkw","wkkkwwwkkkw","wwwwwkwwwww",".wwwwwwwww.","..wkwkwkw..","..wkwkwkw.."],
+ ["...r...","..rrr..","..www..",".wwuww.",".wwwww.",".wwwww.","rwwwwwr","rr.w.rr","..o.o..","...o..."],
+ ["oo........oo","ooo......ooo","oooooooooooo","ookooooookoo","oooooooooooo","oooooppooooo","ooookkkkoooo",".oooooooooo."],
+ ["...rrrrr...",".rrwwrrrrr.","rrrwwrrwwrr","rrrrrrrwwrr","rrrrrrrrrrr","....www....","....www....","....www...."]
+];
+var SPRN = ["смайлик","инопланетянина","сердце","уточку","усы","череп","ракету","кота","гриб"], SPRI = 0;
+function build(seed, GW, GH, fl) {
+  var s = seed % 4294967296, out = [], H2 = GW / 2, occ = {};
+  function r() { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }
+  function ri(a, b) { return a + Math.floor(r() * (b - a + 1)); }
+  function pick(a) { return a[Math.floor(r() * a.length)]; }
+  function free(x, y) { return !occ[y * 1000 + x]; }
+  function t(c, x, y) { occ[y * 1000 + x] = 1; out.push('<div class="' + c + '" style="left:' + p(x * 100 / GW) + '%;top:' + p(y * 100 / GH) + '%"></div>'); }
+  function row(c, x, y, n) { for (var i = 0; i < n; i++) if (free(x + i, y)) t(c, x + i, y); }
+  function mrow(c, x, y, n) { row(c, x, y, n); row(c === "a" ? "b" : c, GW - x - n, y, n); }
+  function cr(c, x, y) {
+    if (!(free(x, y) && free(x + 1, y) && free(x, y + 1) && free(x + 1, y + 1))) return;
+    t(c, x, y); occ[y * 1000 + x + 1] = 1; occ[(y + 1) * 1000 + x] = 1; occ[(y + 1) * 1000 + x + 1] = 1;
+  }
+  function mcrate(c, x, y) { cr(c, x, y); cr(c, GW - x - 2, y); }
+  var i, k, x, y, w, yy, j;
+  SPRI = Math.floor(r() * SPR.length);
+  var spr = SPR[SPRI], sh = spr.length, sw = spr[0].length;
+  var sx = Math.floor((GW - sw) / 2), sy = Math.max(7, Math.floor((GH - sh) / 2));
+  for (i = 0; i < sh; i++) for (j = 0; j < sw; j++) if (spr[i].charAt(j) !== ".") t("t" + spr[i].charAt(j), sx + j, sy + i);
+  row("f", 0, 0, GW); row("f", 0, GH - 1, GW);
+  for (y = 1; y < GH - 1; y++) { t("f", 0, y); t("f", GW - 1, y); }
+  mrow("a", 3, GH - 2, 8);
+  function islands(n) {
+    for (var q = 0; q < n; q++) {
+      var ix = ri(3, H2 - 5), iy = ri(8, GH - 5), iw = ri(2, 6);
+      mrow("a", ix, iy, iw);
+      if (r() < 0.25) mcrate(pick(["c", "d"]), ix, iy - 2);
+    }
+  }
+  var lay = fl === undefined ? ri(0, 5) : fl;
+  if (lay === 0) {
+    for (y = GH - 7; y >= 7; y -= 5) {
+      x = 3 + ri(0, 2);
+      while (x < H2 - 5) {
+        w = Math.min(pick([6, 8, 10, 12, 14]), H2 - 3 - x);
+        if (w < 5) break;
+        yy = y + ri(-1, 1);
+        mrow("a", x, yy, w);
+        if (r() < 0.45) mcrate(pick(["c", "c", "d"]), x + ri(1, Math.max(1, w - 3)), yy - 2);
+        x += w + ri(4, 8);
+      }
+    }
+  } else if (lay === 1) {
+    for (i = 0; ; i++) {
+      x = 3 + i * 4; y = GH - 4 - i * 3;
+      if (y < 7 || x >= H2 - 4) break;
+      mrow("a", x, y, 5);
+      if (r() < 0.4) mcrate("c", x + 1, y - 2);
+    }
+    islands(ri(3, 5));
+  } else if (lay === 2) {
+    for (x = 8; x < H2 - 4; x += 9) {
+      var ph = Math.min(ri(6, 13), GH - 9), top = GH - 2 - ph;
+      for (yy = GH - 2; yy > top; yy--) mrow("a", x, yy, 2);
+      mrow("a", x - 2, top, 6);
+      if (r() < 0.6) mrow("a", x + 6, GH - 9 + ri(-1, 1), 5);
+    }
+    islands(ri(1, 3));
+  } else if (lay === 3) {
+    islands(Math.floor(GW * GH / 90));
+  } else if (lay === 4) {
+    for (i = 0; i < 5; i++) for (yy = GH - 2; yy > GH - 2 - (5 - i); yy--) mrow("a", 1 + i * 3, yy, 3);
+    mrow("a", 18, GH - 12, 7); mrow("a", 8, GH - 17, 6);
+    islands(ri(2, 4));
+  } else {
+    var bx = 6, bw = Math.min(10, H2 - 6 - 4), bt = GH - 9;
+    mrow("a", bx, bt, bw);
+    for (yy = bt + 1; yy < bt + 4; yy++) { mrow("a", bx, yy, 1); mrow("a", bx + bw - 1, yy, 1); }
+    mrow("a", bx + 2, GH - 6, bw - 4);
+    mrow("a", bx - 2, bt - 5, 6); mrow("a", bx + 5, bt - 9, 5);
+    islands(ri(1, 3));
+  }
+  if (r() < 0.6) {
+    for (i = 0; ; i++) {
+      yy = GH - 5 - i * 5;
+      if (yy < 9) break;
+      row("m", i % 2 === 0 ? H2 - 9 : H2 + 4, yy, 5);
+    }
+  }
+  row("m", H2 - 5, 5, 10);
+  for (k = 0; k < 4; k++) {
+    x = 14 + k * 7 + ri(-1, 1);
+    if (x < H2 - 5) mcrate(pick(["c", "d"]), x, GH - 3);
+  }
+  return out.join("");
+}
+
+function rulesHtml(rnd, boss) {
+  function pk(a) { return a[Math.floor(rnd() * a.length)]; }
+  var guns = ["Pistol", "SMG", "Shotgun", "Rocket", "Railgun", "Flamethrower", "Too Much"], weap = [], i;
+  for (i = 0; i < guns.length; i++) weap.push(["Только " + guns[i], " - остальное оружие и гранаты запрещены"]);
+  weap.push(["Только гранаты", " - ПКМ, никакой стрельбы"], ["Любое оружие, кроме Too Much", ""], ["Без гранат", " - только стволы"],
+            ["Меняй оружие каждые 30 секунд", " - по кругу, без повторов"]);
+  var move = [["Джетпак запрещён", " - Space только для прыжка"], ["Джетпак не дольше 2 секунд подряд", ""],
+              ["Пол - лава", " - стоять можно только на платформах"], ["Не стоять на месте", " - всегда в движении"],
+              ["Не касаться земли", " - только летать, зажав Space"]];
+  var bonus = [["Босс в центре", " - первым разрушь: " + boss], ["Король горы", " - 10 секунд на жёлтых платформах = очко"],
+               ["Победитель раунда", " жмёт F5 и получает новый челлендж"], ["Серые стены не трогаем", " - стреляй по платформам и ящикам"]];
+  var list = [pk(weap), pk(move)];
+  if (rnd() < 0.7) list.push(pk(bonus));
+  var h = '<p class="t">Правила арены</p>';
+  for (i = 0; i < list.length; i++) h += '<p><span class="k">' + list[i][0] + '</span>' + list[i][1] + '</p>';
+  return h;
+}
+
+var GW = Math.max(40, 2 * Math.round(window.innerWidth / 80));
+var GH = Math.max(22, Math.round(window.innerHeight / 40));
+var arena = document.getElementById("arena");
+document.getElementById("tilecss").textContent = tileCss(GW, GH);
+var th = Math.floor(Math.random() * 5);
+if (th) arena.className = "th" + th;
+arena.innerHTML = build(Math.floor(Math.random() * 1000000000), GW, GH);
+document.getElementById("hint").innerHTML = rulesHtml(Math.random, SPRN[SPRI]);
+</script>
+</body></html>
